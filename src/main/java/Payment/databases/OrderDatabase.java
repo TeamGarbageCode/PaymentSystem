@@ -1,4 +1,6 @@
-package Payment;
+package Payment.databases;
+
+import Payment.Order;
 
 import java.util.Collection;
 import java.util.HashMap;

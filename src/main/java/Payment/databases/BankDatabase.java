@@ -1,4 +1,7 @@
-package Payment;
+package Payment.databases;
+
+import Payment.Account;
+import Payment.CreditCard;
 
 import java.nio.file.Path;
 import java.util.*;

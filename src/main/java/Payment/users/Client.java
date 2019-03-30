@@ -1,9 +1,9 @@
 package Payment.users;
 
 import Payment.Auxilary;
-import Payment.BankDatabase;
+import Payment.databases.BankDatabase;
 import Payment.Order;
-import Payment.OrderDatabase;
+import Payment.databases.OrderDatabase;
 
 import java.util.Collection;
 
