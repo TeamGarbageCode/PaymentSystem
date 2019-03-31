@@ -1,4 +1,4 @@
-package Payment;
+package payment;
 
 import java.io.InputStreamReader;
 import java.security.MessageDigest;

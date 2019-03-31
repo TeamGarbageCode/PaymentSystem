@@ -1,9 +1,9 @@
-package Payment;
+package payment;
 
-import Payment.databases.BankDatabase;
-import Payment.databases.OrderDatabase;
-import Payment.databases.UserDatabase;
-import Payment.users.User;
+import payment.databases.bank_database.BankDatabase;
+import payment.databases.order_database.OrderDatabase;
+import payment.databases.user_database.UserDatabase;
+import payment.users.User;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -19,17 +19,18 @@ public class Main {
 
         final Path rootDir = FileSystems.getDefault().getPath("src/lab4/");
 
-        Path finUsers = FileSystems.getDefault().getPath( rootDir.toString(),"UDB.txt" );
-        Path finBankDB = FileSystems.getDefault().getPath( rootDir.toString(),"BDB.txt" );
+        String udbUrl = "udb";
+        String bdbUrl = "bdb";
+        String odbUrl = "odb";
 
         try{
-            UserDatabase udb = new UserDatabase(finUsers);
+            UserDatabase udb = new UserDatabase(udbUrl, "admin", "admin");
             Test.fillUDB(udb);
 
-            BankDatabase bdb = new BankDatabase(finBankDB);
+            BankDatabase bdb = new BankDatabase(bdbUrl, "admin", "admin");
             Test.fillBDB(bdb);
 
-            OrderDatabase odb = new OrderDatabase();
+            OrderDatabase odb = new OrderDatabase(odbUrl, "admin", "admin");
             Test.fillODB(odb);
 
             int answer;
@@ -68,7 +69,7 @@ public class Main {
             }while(answer != 0);
         }catch (Exception e){
             System.err.println("some exception was happened");
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
 
     }

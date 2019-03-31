@@ -1,4 +1,4 @@
-package Payment;
+package payment.databases.bank_database;
 
 public class CreditCard {
 

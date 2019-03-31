@@ -1,4 +1,4 @@
-package Payment.users;
+package payment.users;
 
 public enum Role {
     ADMIN,

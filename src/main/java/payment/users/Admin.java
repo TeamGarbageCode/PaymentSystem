@@ -1,9 +1,9 @@
-package Payment.users;
+package payment.users;
 
-import Payment.Auxilary;
-import Payment.databases.BankDatabase;
-import Payment.databases.OrderDatabase;
-import Payment.databases.UserDatabase;
+import payment.Auxilary;
+import payment.databases.bank_database.BankDatabase;
+import payment.databases.order_database.OrderDatabase;
+import payment.databases.user_database.UserDatabase;
 
 import java.util.Collection;
 
@@ -102,8 +102,8 @@ public class Admin extends User {
     }
 
     private static void printAdminMenu(){
-        System.out.println("1.\tAdd user");
-        System.out.println("2.\tDelete user");
+        System.out.println("1.\tAdd user_database");
+        System.out.println("2.\tDelete user_database");
         System.out.println("3.\tPrint all users");
         System.out.println("4.\tBlock credit card");
         System.out.println("5.\tChange password");

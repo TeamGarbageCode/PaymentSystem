@@ -1,10 +1,8 @@
-package Payment.databases;
+package payment.databases.bank_database;
 
-import Payment.Account;
-import Payment.CreditCard;
-import Payment.exceptions.BlockedCreditCardException;
-import Payment.exceptions.IncorrectCreditCardException;
-import Payment.exceptions.IncorrectLoginException;
+import payment.exceptions.BlockedCreditCardException;
+import payment.exceptions.IncorrectCreditCardException;
+import payment.exceptions.IncorrectLoginException;
 
 import java.nio.file.Path;
 import java.util.*;
@@ -26,8 +24,9 @@ public class BankDatabase {
 
     private List<CreditCard> creditCards = new ArrayList<>();
     private Map<String, AccountInfo> accounts;
+
     //read file
-    public BankDatabase(Path file){
+    public BankDatabase(String url,String login,String password){
 
     }
 

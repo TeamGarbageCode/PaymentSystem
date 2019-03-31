@@ -1,9 +1,12 @@
-package Payment.users;
+package payment.users;
 
-import Payment.Auxilary;
-import Payment.databases.BankDatabase;
-import Payment.Order;
-import Payment.databases.OrderDatabase;
+import payment.Auxilary;
+import payment.databases.bank_database.BankDatabase;
+import payment.databases.order_database.Order;
+import payment.databases.order_database.OrderDatabase;
+import payment.exceptions.BlockedCreditCardException;
+import payment.exceptions.IncorrectCreditCardException;
+import payment.exceptions.IncorrectLoginException;
 
 import java.util.Collection;
 
@@ -45,14 +48,23 @@ public class Client extends User{
                     System.out.println("order number");
                     int idx = Auxilary.getCheckedInt();
 
+                    if(idx < 0 || idx > orders.size()){
+                        System.err.println("You have made a mischoice");
+                        break;
+                    }
+
                     Order[] ordersArr = orders.toArray(new Order[0]);
 
                     try {
                         bdb.transfer(bdb.getCreditCardID(login),
                                 ordersArr[idx].getSeller(),
                                 Integer.valueOf( ordersArr[idx].getPrice() ) );
-                    } catch (Exception e) {
-                        System.err.println(e.getMessage());
+                    } catch (IncorrectCreditCardException e) {
+                        System.err.println("banking transaction cannot be performed at the moment, try again later");
+                    } catch (BlockedCreditCardException e){
+                        System.err.println("credit card has been blocked");
+                    } catch (IncorrectLoginException e){
+                        System.err.println("you have no credit card");
                     }
                     break;
                 case 3:
@@ -63,8 +75,12 @@ public class Client extends User{
 
                     try {
                         bdb.transfer(bdb.getCreditCardID(login), dest, amount);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    } catch (IncorrectCreditCardException e) {
+                        System.err.println("incorrect credit card number");
+                    } catch (BlockedCreditCardException e){
+                        System.err.println("credit card has been blocked");
+                    } catch (IncorrectLoginException e){
+                        System.err.println("you have no credit card");
                     }
                     break;
                 case 4:
@@ -88,7 +104,7 @@ public class Client extends User{
                 case 0:
                     return;
                 default:
-                    System.err.println("incorrect value");
+                    System.err.println("no such paragraph in menu");
                     break;
             }
 

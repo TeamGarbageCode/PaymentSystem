@@ -1,4 +1,4 @@
-package Payment;
+package payment.databases.order_database;
 
 public class Order {
 

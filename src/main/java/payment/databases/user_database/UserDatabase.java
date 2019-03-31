@@ -1,23 +1,22 @@
-package Payment.databases;
+package payment.databases.user_database;
 
-import Payment.exceptions.IncorrectLoginException;
-import Payment.exceptions.LoginAlreadyExistsException;
-import Payment.exceptions.UnallowedRoleException;
-import Payment.exceptions.UserDatabaseCrashedException;
-import Payment.users.*;
+import payment.exceptions.IncorrectLoginException;
+import payment.exceptions.LoginAlreadyExistsException;
+import payment.exceptions.UnallowedRoleException;
+import payment.exceptions.UserDatabaseCrashedException;
+import payment.users.*;
 
-import java.nio.file.Path;
 import java.util.*;
 
 public class UserDatabase {
 
     private Map<String, User> users = new HashMap<>();
 
-    public UserDatabase(Path file){
+    public UserDatabase(String url,String login,String password){
         //read file
     }
 
-    public void save(Path file){
+    public void save(String url,String login,String password){
         //write file
     }
 

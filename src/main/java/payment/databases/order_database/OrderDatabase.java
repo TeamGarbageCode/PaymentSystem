@@ -1,6 +1,4 @@
-package Payment.databases;
-
-import Payment.Order;
+package payment.databases.order_database;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,7 +8,7 @@ public class OrderDatabase {
 
     private Map<String, Collection<Order>> orders = new HashMap<>();
 
-    public OrderDatabase(){
+    public  OrderDatabase(String url,String login,String password) {
 
     }
 

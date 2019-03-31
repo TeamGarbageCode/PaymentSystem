@@ -1,4 +1,4 @@
-package Payment.exceptions;
+package payment.exceptions;
 
 public class UnallowedRoleException extends Exception{
 

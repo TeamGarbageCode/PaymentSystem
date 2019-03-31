@@ -1,4 +1,4 @@
-package Payment;
+package payment.databases.bank_database;
 
 public class Account {
 
@@ -8,7 +8,7 @@ public class Account {
         this.amount = amount;
     }
 
-    public void setAmount(int amount){
+    void setAmount(int amount){
         this.amount = amount;
     }
 

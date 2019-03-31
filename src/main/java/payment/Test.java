@@ -1,9 +1,10 @@
-package Payment;
+package payment;
 
-import Payment.databases.BankDatabase;
-import Payment.databases.OrderDatabase;
-import Payment.databases.UserDatabase;
-import Payment.users.Role;
+import payment.databases.bank_database.BankDatabase;
+import payment.databases.order_database.Order;
+import payment.databases.order_database.OrderDatabase;
+import payment.databases.user_database.UserDatabase;
+import payment.users.Role;
 
 import java.util.ArrayList;
 
@@ -27,12 +28,12 @@ public abstract class Test {
         odb.getAllOrders().put("dim", new ArrayList<>());
         odb.getAllOrders().put("jim", new ArrayList<>());
 
-        odb.addOrder("tim", new Order("testid1", "tim order 1", "10.10") );
-        odb.addOrder("tim", new Order("testid2", "tim order 2", "12.10") );
-        odb.addOrder("dim", new Order("testid3", "dim order 1", "1.10") );
-        odb.addOrder("dim", new Order("testid4", "dim order 2", "120.10") );
-        odb.addOrder("dim", new Order("testid5", "dim order 3", "20.10") );
-        odb.addOrder("jim", new Order("testid6", "jim order 1", "50") );
+        odb.addOrder("tim", new Order("testid1", "tim order_database 1", "10.10") );
+        odb.addOrder("tim", new Order("testid2", "tim order_database 2", "12.10") );
+        odb.addOrder("dim", new Order("testid3", "dim order_database 1", "1.10") );
+        odb.addOrder("dim", new Order("testid4", "dim order_database 2", "120.10") );
+        odb.addOrder("dim", new Order("testid5", "dim order_database 3", "20.10") );
+        odb.addOrder("jim", new Order("testid6", "jim order_database 1", "50") );
     }
 
     public static void fillBDB(BankDatabase bdb){
