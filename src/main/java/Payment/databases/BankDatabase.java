@@ -2,6 +2,9 @@ package Payment.databases;
 
 import Payment.Account;
 import Payment.CreditCard;
+import Payment.exceptions.BlockedCreditCardException;
+import Payment.exceptions.IncorrectCreditCardException;
+import Payment.exceptions.IncorrectLoginException;
 
 import java.nio.file.Path;
 import java.util.*;
@@ -46,12 +49,11 @@ public class BankDatabase {
         accounts.remove(login);
     }
 
-    public String getCreditCardID(String login) throws Exception {
+    public String getCreditCardID(String login) throws IncorrectLoginException{
         AccountInfo accountInfo = accounts.get(login);
 
         if(accountInfo == null) {
-            //create class for this
-            throw new Exception("wrong login");
+            throw new IncorrectLoginException();
         }
 
         return accountInfo.creditCard.getId();
@@ -63,17 +65,16 @@ public class BankDatabase {
 
     //if credit card with srcCreditCardID ID not blocked,
     //transfer amount from srcCreditCardID card to destCreditCardID card(even if it has been blocked)
-    public void transfer(String srcCreditCardID, String destCreditCardID, int amount) throws Exception {
+    public void transfer(String srcCreditCardID, String destCreditCardID, int amount)
+            throws IncorrectCreditCardException, BlockedCreditCardException {
         AccountInfo srcInfo = accounts.get(srcCreditCardID);
         AccountInfo destInfo = accounts.get(destCreditCardID);
 
         if(srcInfo == null || destInfo == null){
-            //create class for this
-            throw  new Exception("wrong login");
+            throw  new IncorrectCreditCardException();
         }
         if(srcInfo.creditCard.isBlocked() ){
-            //create class for this
-            throw  new Exception("credit card blocked");
+            throw  new BlockedCreditCardException();
         }
 
         Account srcAccount = srcInfo.creditCard.getAccount();

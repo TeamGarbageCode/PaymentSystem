@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0d3f16-07e4-42ba-860c-3fbefe2780b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/BlockedCreditCardException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectCreditCardException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectLoginException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/LoginAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/BankDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/databases/BankDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/OrderDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/databases/OrderDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/users/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/users/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/databases/BankDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/databases/BankDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,20 +37,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="53" />
+            <state relative-caret-position="281">
+              <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1749#1750#0" expanded="true" />
+                <element signature="e#1784#1785#0" expanded="true" />
+                <element signature="e#1828#1829#0" expanded="true" />
+                <element signature="e#1865#1866#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="68">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -83,6 +89,13 @@
         <option value="$PROJECT_DIR$/src/main/java/Payment/UserDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java" />
         <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectLoginException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/BlockedCreditCardException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectCreditCardException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/databases/BankDatabase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/CreditCard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/exceptions/LoginAlreadyExistsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java" />
       </list>
     </option>
   </component>
@@ -105,8 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,27 +158,20 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Payment" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaymentSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaymentSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Payment" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553946581800" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553972315092" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -207,18 +211,27 @@
       <workItem from="1553885829707" duration="3326000" />
       <workItem from="1553891339725" duration="707000" />
       <workItem from="1553892771257" duration="934000" />
-      <workItem from="1553946029097" duration="549000" />
+      <workItem from="1553946029097" duration="639000" />
+      <workItem from="1553961172977" duration="5662000" />
+      <workItem from="1554045474817" duration="1343000" />
     </task>
+    <task id="LOCAL-00001" summary="Exception classes for invalid role and for UserDatabase crash">
+      <created>1553946653982</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553946653982</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9902000" />
+    <option name="totallyTimeSpent" value="16997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27919462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -248,7 +261,7 @@
       <window_info anchor="right" id="Database" order="8" weight="0.304698" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -281,69 +294,15 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Exception classes for invalid role and for UserDatabase crash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exception classes for invalid role and for UserDatabase crash" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/CreditCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -357,30 +316,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="346">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1106">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/users/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -389,18 +362,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/BankDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/OrderDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="33">
+          <caret line="52" column="54" lean-forward="true" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -409,15 +372,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/UnallowedRoleException.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#117#118#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/OrderDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="53" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/CreditCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectLoginException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/BlockedCreditCardException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/IncorrectCreditCardException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/LoginAlreadyExistsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+          <folding>
+            <element signature="e#117#118#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Payment/exceptions/UserDatabaseCrashedException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Payment/databases/UserDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1828#1829#0" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

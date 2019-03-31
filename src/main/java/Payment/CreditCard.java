@@ -2,7 +2,7 @@ package Payment;
 
 public class CreditCard {
 
-    private static String lastID;
+    private static String lastID = "0";
     private String id;
     private Account account;
     private boolean blocked;

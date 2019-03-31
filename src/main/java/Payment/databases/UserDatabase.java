@@ -1,5 +1,9 @@
 package Payment.databases;
 
+import Payment.exceptions.IncorrectLoginException;
+import Payment.exceptions.LoginAlreadyExistsException;
+import Payment.exceptions.UnallowedRoleException;
+import Payment.exceptions.UserDatabaseCrashedException;
 import Payment.users.*;
 
 import java.nio.file.Path;
@@ -13,12 +17,16 @@ public class UserDatabase {
         //read file
     }
 
-    public UserDatabase(String adminFirstName, String adminLastName) throws Exception{
-        addUser("admin", adminFirstName, adminLastName, "admin", Role.ADMIN);
-    }
-
     public void save(Path file){
         //write file
+    }
+
+    public UserDatabase(String adminFirstName, String adminLastName) throws UserDatabaseCrashedException {
+        try {
+            addUser("admin", adminFirstName, adminLastName, "admin", Role.ADMIN);
+        } catch (Exception e) {
+            throw new UserDatabaseCrashedException();
+        }
     }
 
     public User signIn(String login, String password){
@@ -32,8 +40,13 @@ public class UserDatabase {
         return null;
     }
 
-    public void addUser(String login, String firstName, String lastName, String password, Role role) throws Exception{
+    public void addUser(String login, String firstName, String lastName, String password, Role role)
+            throws UnallowedRoleException, LoginAlreadyExistsException, IncorrectLoginException {
         User newUser;
+
+        if(login.isEmpty()){
+            throw new IncorrectLoginException();
+        }
 
         switch (role){
             case ADMIN:
@@ -43,13 +56,11 @@ public class UserDatabase {
                 newUser = new Client(login, firstName, lastName, password);
                 break;
             default:
-                //create class for this exception
-                throw new Exception("Unallowed role");
+                throw new UnallowedRoleException();
         }
 
         if(users.putIfAbsent(login, newUser) != null){
-            //create class for this exception
-            throw new Exception("user already exist");
+            throw new LoginAlreadyExistsException();
         }
     }
 
