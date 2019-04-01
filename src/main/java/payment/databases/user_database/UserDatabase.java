@@ -1,10 +1,14 @@
 package payment.databases.user_database;
 
+import payment.databases.DBConnector;
 import payment.exceptions.IncorrectLoginException;
 import payment.exceptions.LoginAlreadyExistsException;
 import payment.exceptions.UnallowedRoleException;
 import payment.exceptions.UserDatabaseCrashedException;
 import payment.users.*;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import java.util.*;
 
@@ -12,12 +16,36 @@ public class UserDatabase {
 
     private Map<String, User> users = new HashMap<>();
 
-    public UserDatabase(String url,String login,String password){
-        //read file
-    }
+    public UserDatabase(String url,String dblogin,String dbpassword) throws UserDatabaseCrashedException {
+        DBConnector dbConnector = new DBConnector();
+        try {
+            dbConnector.connectToDB(url, dblogin, dbpassword);
+            Statement statement = dbConnector.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+            while (resultSet.next()) {
+                String login = resultSet.getString("login");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                byte[] password = resultSet.getString("password").getBytes();
 
-    public void save(String url,String login,String password){
-        //write file
+                User result;
+                switch (Role.valueOf(resultSet.getString("role"))){
+                    case CLIENT:
+                        result = new Client(login, firstName, lastName, password);
+                        break;
+                    case ADMIN:
+                        result = new Admin(login, firstName, lastName, password, this);
+                        break;
+                    default:
+                        throw new UnallowedRoleException();
+                }
+                users.put(login, result);
+            }
+        } catch (Exception e){
+            throw new UserDatabaseCrashedException(e.getMessage());
+        } finally {
+            dbConnector.closeConnection();
+        }
     }
 
     public UserDatabase(String adminFirstName, String adminLastName) throws UserDatabaseCrashedException {
@@ -26,6 +54,10 @@ public class UserDatabase {
         } catch (Exception e) {
             throw new UserDatabaseCrashedException();
         }
+    }
+
+    public void save(String url,String login,String password){
+        //write file
     }
 
     public User signIn(String login, String password){
