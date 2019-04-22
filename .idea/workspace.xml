@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0d3f16-07e4-42ba-860c-3fbefe2780b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PaymentSystem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/payment/Auxiliary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/payment/Auxiliary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/payment/databases/user_database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/payment/databases/user_database/UserDatabase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +52,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/payment/Auxiliary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,7 +113,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/payment/databases/bank_database/AccountInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/payment/databases/bank_database/BankAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/payment/Auxiliary.java" />
         <option value="$PROJECT_DIR$/src/main/java/payment/databases/bank_database/CreditCard.java" />
         <option value="$PROJECT_DIR$/src/main/java/payment/exceptions/DatabaseCrashedException.java" />
         <option value="$PROJECT_DIR$/src/main/java/payment/databases/bank_database/UserAccount.java" />
@@ -107,6 +121,7 @@
         <option value="$PROJECT_DIR$/src/main/java/payment/users/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/payment/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/payment/Auxiliary.java" />
       </list>
     </option>
   </component>
@@ -140,7 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,35 +225,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="payment" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaymentSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaymentSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaymentSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaymentSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaymentSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaymentSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,6 +323,7 @@
       <workItem from="1555763754699" duration="1560000" />
       <workItem from="1555941170250" duration="769000" />
       <workItem from="1555941985275" duration="109000" />
+      <workItem from="1555943950226" duration="274000" />
     </task>
     <task id="LOCAL-00001" summary="Exception classes for invalid role and for UserDatabase crash">
       <created>1553946653982</created>
@@ -377,12 +371,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55506000" />
+    <option name="totallyTimeSpent" value="55780000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27217743" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27620968" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -668,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/payment/Auxiliary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="487">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
