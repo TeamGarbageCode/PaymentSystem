@@ -1,6 +1,6 @@
 package payment.users;
 
-import payment.Auxilary;
+import payment.Auxiliary;
 import payment.databases.bank_database.BankDatabase;
 import payment.databases.order_database.OrderDatabase;
 import payment.databases.user_database.UserDatabase;
@@ -31,18 +31,18 @@ public class Admin extends User {
         int answer;
         while(true){
             printAdminMenu();
-            answer = Auxilary.getCheckedInt();
+            answer = Auxiliary.getCheckedInt();
 
             switch (answer){
                 case 1:
                     System.out.println("login");
-                    String login = Auxilary.getCheckedString();
+                    String login = Auxiliary.getCheckedString();
                     System.out.println("first name");
-                    String firstName = Auxilary.getCheckedString();
+                    String firstName = Auxiliary.getCheckedString();
                     System.out.println("last name");
-                    String lastName = Auxilary.getCheckedString();
+                    String lastName = Auxiliary.getCheckedString();
                     System.out.println("password");
-                    String password = Auxilary.getCheckedString();
+                    String password = Auxiliary.getCheckedString();
 
                     try {
                         udb.addUser(login, firstName, lastName, password, Role.CLIENT);
@@ -53,7 +53,7 @@ public class Admin extends User {
                     break;
                 case 2:
                     System.out.println("login of user to be deleted");
-                    String loginToBeDeleted = Auxilary.getCheckedString();
+                    String loginToBeDeleted = Auxiliary.getCheckedString();
 
                     udb.delUser(loginToBeDeleted);
                     bdb.delAccount(loginToBeDeleted);
@@ -67,9 +67,9 @@ public class Admin extends User {
                     break;
                 case 4:
                     System.out.println("credit card id");
-                    String creditCardID = Auxilary.getCheckedString();
+                    String creditCardID = Auxiliary.getCheckedString();
                     printBlockMenu();
-                    int choice = Auxilary.getCheckedInt();
+                    int choice = Auxiliary.getCheckedInt();
 
                     switch (choice){
                         case 1:
@@ -85,9 +85,9 @@ public class Admin extends User {
                     break;
                 case 5:
                     System.out.println("Old password");
-                    String oldPassword = Auxilary.getCheckedString();
+                    String oldPassword = Auxiliary.getCheckedString();
                     System.out.println("New password");
-                    String newPassword= Auxilary.getCheckedString();
+                    String newPassword= Auxiliary.getCheckedString();
 
                     changePassword(oldPassword, newPassword);
                     break;

@@ -6,7 +6,7 @@ import java.util.Properties;
 public class DBConnector {
     private Connection connection;
 
-    public void connectToDB(String url,String login,String password){
+    public void connectToDB(String url,String login,String password) throws SQLException {
         Properties properties = new Properties();
         properties.put("user", login);
         properties.put("password", password);
@@ -16,13 +16,8 @@ public class DBConnector {
         properties.put("useSSL", "false");
         properties.put("useLegacyDatetimeCode", "false");
         properties.put("serverTimezone", "UTC");
-        try {
-            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-            connection =  DriverManager.getConnection(url,properties);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+        connection = DriverManager.getConnection(url, properties);
     }
 
     public void closeConnection(){

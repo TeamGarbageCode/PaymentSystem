@@ -2,14 +2,17 @@ package payment.databases.bank_database;
 
 public class CreditCard {
 
-    private static String lastID = "0";
-    private String id;
-    private Account account;
+    private static String lastID = "1000000";
+
+    private final String ID;
+    private String password;
+    private BankAccount account;
     private boolean blocked;
 
-    public CreditCard(Account account){
+    public CreditCard(String ID, String password, BankAccount account){
+        this.ID = ID;
+        this.password = password;
         this.account = account;
-        this.id = nextID();
         this.blocked = false;
     }
 
@@ -17,7 +20,7 @@ public class CreditCard {
         this.blocked = blocked;
     }
 
-    public Account getAccount(){
+    public BankAccount getAccount(){
         return account;
     }
 
@@ -29,11 +32,21 @@ public class CreditCard {
         return account.getAmount();
     }
 
-    public String getId(){
-        return id;
+    public String getID(){
+        return ID;
     }
 
     private static String nextID(){
-        return String.valueOf(Integer.valueOf(lastID) + 1);
+        lastID = String.valueOf(Integer.valueOf(lastID) + 1);
+        return lastID;
+    }
+
+    @Override
+    public String toString() {
+        return "CreditCard{" +
+                "ID='" + ID + '\'' +
+                ", amount=" + account.getAmount() +
+                ", blocked=" + blocked +
+                '}';
     }
 }

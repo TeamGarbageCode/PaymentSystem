@@ -1,10 +1,12 @@
 package payment.databases.bank_database;
 
-public class Account {
+public class BankAccount {
 
+    private final String ID;
     private int amount;
 
-    public Account(int amount){
+    public BankAccount(String ID, int amount){
+        this.ID = ID;
         this.amount = amount;
     }
 
@@ -14,5 +16,9 @@ public class Account {
 
     public int getAmount() {
         return amount;
+    }
+
+    public String getID(){
+        return ID;
     }
 }

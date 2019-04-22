@@ -2,20 +2,18 @@ package payment.databases.order_database;
 
 public class Order {
 
-    private static final String defaultSeller = "admin";
-
     private String id;
     private String name;
     private String description;
     private String price;
     private String seller;
 
-    public Order(String id, String name, String price) {
-        this.id = id;
+    public Order(String name, String price, String description, String seller) {
+        this.id = nextID();
         this.name = name;
-        this.description = "";
+        this.description = description;
         this.price = price;
-        this.seller = defaultSeller;
+        this.seller = seller;
     }
 
     public String getId() {
@@ -45,5 +43,9 @@ public class Order {
                 ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
                 '}';
+    }
+
+    private String nextID(){
+        return "default id";
     }
 }

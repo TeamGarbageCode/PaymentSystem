@@ -1,13 +1,15 @@
 package payment.users;
 
-import payment.Auxilary;
+import payment.Auxiliary;
 import payment.databases.bank_database.BankDatabase;
+import payment.databases.bank_database.CreditCard;
 import payment.databases.order_database.Order;
 import payment.databases.order_database.OrderDatabase;
 import payment.exceptions.BlockedCreditCardException;
 import payment.exceptions.IncorrectCreditCardException;
 import payment.exceptions.IncorrectLoginException;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Client extends User{
@@ -32,7 +34,7 @@ public class Client extends User{
         int answer;
         while(true){
             printClientMenu();
-            answer = Auxilary.getCheckedInt();
+            answer = Auxiliary.getCheckedInt();
 
             switch (answer){
                 case 1:
@@ -41,46 +43,42 @@ public class Client extends User{
                     }
                     break;
                 case 2:
-                    Collection<Order> orders = odb.getOrders(login);
-                    for(Order order: orders){
-                        System.out.println(order);
-                    }
-                    System.out.println("order number");
-                    int idx = Auxilary.getCheckedInt();
+                    Order order = chooseOrder(odb);
 
-                    if(idx < 0 || idx > orders.size()){
-                        System.err.println("You have made a mischoice");
+                    if(order == null){
+                        System.out.println("You have no orders");
                         break;
                     }
 
-                    Order[] ordersArr = orders.toArray(new Order[0]);
+                    String creditCardID = chooseCreditCard(bdb);
+
+                    if(creditCardID == null){
+                        System.out.println("You have no credit cards");
+                        break;
+                    }
 
                     try {
-                        bdb.transfer(bdb.getCreditCardID(login),
-                                ordersArr[idx].getSeller(),
-                                Integer.valueOf( ordersArr[idx].getPrice() ) );
+                        bdb.transfer(creditCardID,
+                                order.getSeller(),
+                                Integer.valueOf(order.getPrice() ) );
                     } catch (IncorrectCreditCardException e) {
                         System.err.println("banking transaction cannot be performed at the moment, try again later");
                     } catch (BlockedCreditCardException e){
                         System.err.println("credit card has been blocked");
-                    } catch (IncorrectLoginException e){
-                        System.err.println("you have no credit card");
                     }
                     break;
                 case 3:
                     System.out.println("destination");
-                    String dest = Auxilary.getCheckedString();
+                    String dest = Auxiliary.getCheckedString();
                     System.out.println("amount");
-                    int amount = Auxilary.getCheckedInt();
+                    int amount = Auxiliary.getCheckedInt();
 
                     try {
-                        bdb.transfer(bdb.getCreditCardID(login), dest, amount);
+                        bdb.transfer(chooseCreditCard(bdb), dest, amount);
                     } catch (IncorrectCreditCardException e) {
                         System.err.println("incorrect credit card number");
                     } catch (BlockedCreditCardException e){
-                        System.err.println("credit card has been blocked");
-                    } catch (IncorrectLoginException e){
-                        System.err.println("you have no credit card");
+                        System.err.println("Your credit card has been blocked");
                     }
                     break;
                 case 4:
@@ -88,16 +86,16 @@ public class Client extends User{
                     return;
                 case 5:
                     try {
-                        bdb.setCreditCardBlocked(bdb.getCreditCardID(login), true);
+                        bdb.setCreditCardBlocked(chooseCreditCard(bdb), true);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
                     }
                     break;
                 case 6:
                     System.out.println("Old password");
-                    String oldPassword = Auxilary.getCheckedString();
+                    String oldPassword = Auxiliary.getCheckedString();
                     System.out.println("New password");
-                    String newPassword= Auxilary.getCheckedString();
+                    String newPassword= Auxiliary.getCheckedString();
 
                     changePassword(oldPassword, newPassword);
                     break;
@@ -109,6 +107,52 @@ public class Client extends User{
             }
 
         }
+    }
+
+    private String chooseCreditCard(BankDatabase bdb){
+        ArrayList<CreditCard> creditCards = (ArrayList<CreditCard>) bdb.getCreditCards(getLogin());
+
+        if(creditCards == null){
+            return null;
+        }
+
+        System.out.println("Your credit cards: ");
+        for (int i = 0; i < creditCards.size(); ++i){
+            System.out.println(i  + " - " + creditCards.get(i));
+        }
+
+        System.out.println("Choose credit card");
+        int number = Auxiliary.getCheckedInt();
+
+        if(number < 0 || number > creditCards.size()){
+            System.err.println("You have made a mischoice");
+            return null;
+        }
+
+        return creditCards.get(number).getID();
+    }
+
+    private Order chooseOrder(OrderDatabase odb){
+        ArrayList<Order> orders = (ArrayList<Order>) odb.getOrders(getLogin());
+
+        if(orders == null){
+            return null;
+        }
+
+        System.out.println("Your orders: ");
+        for (int i = 0; i < orders.size(); ++i){
+            System.out.println(i  + " - " + orders.get(i));
+        }
+
+        System.out.println("Choose order");
+        int number = Auxiliary.getCheckedInt();
+
+        if(number < 0 || number > orders.size()){
+            System.err.println("You have made a mischoice");
+            return null;
+        }
+
+        return orders.get(number);
     }
 
     private static void printClientMenu(){

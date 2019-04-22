@@ -37,14 +37,14 @@ public class Main {
             int attempt = 0;
             do {
                 printMenu();
-                answer = Auxilary.getCheckedInt();
+                answer = Auxiliary.getCheckedInt();
 
                 switch (answer){
                     case 1:
                         System.out.println("Login");
-                        String login = Auxilary.getCheckedString();
+                        String login = Auxiliary.getCheckedString();
                         System.out.println("Password");
-                        String password = Auxilary.getCheckedString();
+                        String password = Auxiliary.getCheckedString();
 
                         User user = udb.signIn(login, password);
                         if(user != null){

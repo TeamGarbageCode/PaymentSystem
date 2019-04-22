@@ -1,6 +1,6 @@
 package payment.users;
 
-import payment.Auxilary;
+import payment.Auxiliary;
 import payment.databases.bank_database.BankDatabase;
 import payment.databases.order_database.OrderDatabase;
 
@@ -63,6 +63,6 @@ public abstract class User {
     }
 
     private static byte[] hash(String src){
-        return Auxilary.toSHA1( src.getBytes() );
+        return Auxiliary.toSHA1( src.getBytes() );
     }
 }

@@ -4,7 +4,7 @@ import payment.databases.DBConnector;
 import payment.exceptions.IncorrectLoginException;
 import payment.exceptions.LoginAlreadyExistsException;
 import payment.exceptions.UnallowedRoleException;
-import payment.exceptions.UserDatabaseCrashedException;
+import payment.exceptions.DatabaseCrashedException;
 import payment.users.*;
 
 import java.sql.ResultSet;
@@ -16,7 +16,7 @@ public class UserDatabase {
 
     private Map<String, User> users = new HashMap<>();
 
-    public UserDatabase(String url,String dblogin,String dbpassword) throws UserDatabaseCrashedException {
+    public UserDatabase(String url,String dblogin,String dbpassword) throws DatabaseCrashedException {
         DBConnector dbConnector = new DBConnector();
         try {
             dbConnector.connectToDB(url, dblogin, dbpassword);
@@ -42,17 +42,17 @@ public class UserDatabase {
                 users.put(login, result);
             }
         } catch (Exception e){
-            throw new UserDatabaseCrashedException(e.getMessage());
+            throw new DatabaseCrashedException(e.getMessage());
         } finally {
             dbConnector.closeConnection();
         }
     }
 
-    public UserDatabase(String adminFirstName, String adminLastName) throws UserDatabaseCrashedException {
+    public UserDatabase(String adminFirstName, String adminLastName) throws DatabaseCrashedException {
         try {
             addUser("admin", adminFirstName, adminLastName, "admin", Role.ADMIN);
         } catch (Exception e) {
-            throw new UserDatabaseCrashedException();
+            throw new DatabaseCrashedException();
         }
     }
 

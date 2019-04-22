@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
-public abstract class Auxilary {
+public abstract class Auxiliary {
 
     public static String getCheckedString(){
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
@@ -34,16 +34,16 @@ public abstract class Auxilary {
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
 
         int result = 0;
-        boolean ok = true;
+        boolean ok = false;
 
         do{
             try {
                 result = scanner.nextInt();
+                ok = true;
             } catch (Exception e) {
                 System.err.println("some error happened");
-                System.err.println(e);
+                System.err.println(e.getMessage());
                 System.err.println("please retype");
-                ok = false;
             }
         }while(!ok);
 
