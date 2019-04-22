@@ -25,13 +25,10 @@ public class Main {
 
         try{
             UserDatabase udb = new UserDatabase(udbUrl, "admin", "admin");
-            Test.fillUDB(udb);
 
             BankDatabase bdb = new BankDatabase(bdbUrl, "admin", "admin");
-            Test.fillBDB(bdb);
 
             OrderDatabase odb = new OrderDatabase(odbUrl, "admin", "admin");
-            Test.fillODB(odb);
 
             int answer;
             int attempt = 0;

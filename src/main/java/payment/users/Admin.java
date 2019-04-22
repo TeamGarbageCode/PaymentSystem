@@ -4,6 +4,7 @@ import payment.Auxiliary;
 import payment.databases.bank_database.BankDatabase;
 import payment.databases.order_database.OrderDatabase;
 import payment.databases.user_database.UserDatabase;
+import payment.exceptions.IncorrectCreditCardException;
 
 import java.util.Collection;
 
@@ -71,17 +72,20 @@ public class Admin extends User {
                     printBlockMenu();
                     int choice = Auxiliary.getCheckedInt();
 
-                    switch (choice){
-                        case 1:
-                            bdb.setCreditCardBlocked(creditCardID, true);
-                            break;
-                        case 2:
-                            bdb.setCreditCardBlocked(creditCardID, false);
-                            break;
-                        default:
-                            System.err.println("mischoice");
+                    try {
+                        switch (choice) {
+                            case 1:
+                                bdb.setCreditCardBlocked(creditCardID, true);
+                                break;
+                            case 2:
+                                bdb.setCreditCardBlocked(creditCardID, false);
+                                break;
+                            default:
+                                System.err.println("mischoice");
+                        }
+                    } catch (IncorrectCreditCardException e){
+                        System.err.println("there is no credit card corresponding to this number");
                     }
-
                     break;
                 case 5:
                     System.out.println("Old password");
